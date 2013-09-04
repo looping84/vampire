@@ -1,10 +1,10 @@
 
 /*
- * GET home page.
+ * GET test page.
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+exports.test = function(req, res){
+  res.render('test', { title: 'looping test' });
 };
 exports.user = function(req, res) { };
 exports.post = function(req, res) { };
