@@ -2,53 +2,80 @@
 <html>
   <head>
    <title><%= title %> - Vampire</title>
-        <link href="stylesheets/bootstrap.css" rel="stylesheet"/>
-        <link href="stylesheets/bootstrap-theme.css" rel="stylesheet"/>
+        <link href="stylesheets/main.css" rel="stylesheet"/>
         <%-scripts%>
         <%-stylesheets%>
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Bootstrap theme</a>
+     <div id="wrapper">
+      <header>
+        <div id="logo"><a href="#"><i>front</i>-end</a></div>
+        
+      </header>
+      <nav>
+        <ul>
+          <li class="curr-page"><a href="">首页</a></li>
+          <li><a href="">最新blog</a>></li>
+          <li><a href="">最热blog</a></li>
+          <li><a href="">联系我们</a></li>
+        </ul>
+      </nav>
+      <section>
+        <p class="tile">最新<i>Blog</i></p>
+        <div id="latest-blog">
+          <div class="latest-item">
+            <a href="#"><img src="images/2.jpg"></a>
+            <div class="item-info">
+              <h3>blog</h3>
+              <h4><a href="">前端异步解决方案——mmDeferred</a></h4>
+              <p>2013-08-30 10:44 <a href="http://www.cnblogs.com/rubylouvre/">司徒正美</a></p>
+            </div>
+          </div>
+          <div class="latest-item">
+            <a href="#"><img src="images/1.jpg"></a>
+            <div class="item-info">
+              <h3>blog</h3>
+              <h4><a href="">将字符实体引用转换成 Unicode 字符</a></h4>
+              <p>2011-10-18 下午 <a href="http://www.planabc.net/">怿飞（圆心）</a></p>
+            </div>
+          </div>
+          <div class="latest-item">
+            <a href="#"><img src="images/3.jpg"></a>
+            <div class="item-info">
+              <h3>blog</h3>
+              <h4><a href="">积累代码 vs. 积累经验</a></h4>
+              <p>2013-07-08  <a href="http://hikejun.com/blog">kejun</a></p>
+            </div>
+          </div>
+          <div class="latest-item">
+            <a href="#"><img src="images/1.jpg"></a>
+            <div class="item-info">
+              <h3>blog</h3>
+              <h4><a href="">将字符实体引用转换成 Unicode 字符</a></h4>
+              <p>2011-10-18 下午 <a href="">怿飞（圆心）</a></p>
+            </div>
+          </div>
+          <div class="latest-item">
+            <a href="#"><img src="images/1.jpg"></a>
+            <div class="item-info">
+              <h3>blog</h3>
+              <h4><a href="">将字符实体引用转换成 Unicode 字符</a></h4>
+              <p>2011-10-18 下午 <a href="">怿飞（圆心）</a></p>
+            </div>
+          </div>
+          <div class="latest-item">
+            <a href="#"><img src="images/1.jpg"></a>
+            <div class="item-info">
+              <h3>blog</h3>
+              <h4><a href="">将字符实体引用转换成 Unicode 字符</a></h4>
+              <p>2011-10-18 下午 <a href="">怿飞（圆心）</a></p>
+            </div>
+          </div>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
 
-    <div id="container" class="container">
-        <%- body %>
-        <hr />
-        <footer>
-            <p><a href="http://www.baidu.com/" target="_blank">baidu</a> 2012</p> 
-        </footer>
-    </div>
+      </section>
+    </div>          
     <script src="/javascripts/jquery.js"></script>
-    <script src="/javascripts/bootstrap.js"></script>
 </body>
 
 </html>
