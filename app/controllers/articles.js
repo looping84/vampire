@@ -43,9 +43,14 @@ exports.grabSite = function(req, res) {
             comments: {
                 count: ar.commentCount
             },
-            author: ar.author
+            author: ar.author,
+            url: ar.url
         });
-        article.save();
+        Article.findOne({ url: ar.url },"url", function (err, result) {
+            if(!err && !result) {//说明没找到记录，则入库
+                article.save();
+            }
+        });
         if(ar.bFinish) {
             res.redirect('/articles');
         }

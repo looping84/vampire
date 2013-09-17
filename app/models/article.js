@@ -45,6 +45,7 @@ var ArticleSchema = new Schema({
         cdnUri: String,
         files: []
     },
+    url: {type: String, default: ''},
     author:{type: String, default: ''},
     createdAt: {type : Date, default : Date.now},
     //阅读次数

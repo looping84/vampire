@@ -13,7 +13,7 @@ block content
 
                 .meta.muted
                     span= formatDate(article.createdAt)
-                    article.author - 阅读数（#{article.viewsCount}）;
+                    &nbsp;&nbsp;作者: #{article.author} - 阅读数（#{article.viewsCount}）;
                     - if (article.user)
                         span Author &nbsp;
 
