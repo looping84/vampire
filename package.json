@@ -1,14 +1,25 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "3.3.8",
-    "hjs": "*",
-    "less-middleware": "*",
-    "ejs-locals": "~1.0.2"
-  }
+    "name": "vampire",
+    "version": "0.0.1",
+    "private": true,
+    "description": "a vampire app",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "3.3.8",
+        "less-middleware": "*",
+        "jsdom": "",
+        "view-helpers": "latest",
+        "mongoose": "latest",
+        "jade": "latest",
+        "imager": "latest",
+        "notifier": "latest",
+        "underscore": "latest",
+        "async": "latest",
+        "connect-mongo": "latest"
+    },
+    "devDependencies": {
+        "request": "~2.27.0"
+    }
 }
