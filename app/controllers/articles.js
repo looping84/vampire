@@ -33,7 +33,7 @@ exports.load = function(req, res, next, id){
  */
 exports.grabSite = function(req, res) {
     var siteName = req.params.sitename;
-   
+    
     Grab.init(function(ar) {
         var article = new Article({
             title: ar.title,
@@ -44,6 +44,7 @@ exports.grabSite = function(req, res) {
                 count: ar.commentCount
             },
             author: ar.author,
+            author_en: ar.author_en,
             url: ar.url
         });
         Article.findOne({ url: ar.url },"url", function (err, result) {
@@ -51,9 +52,10 @@ exports.grabSite = function(req, res) {
                 article.save();
             }
         });
-        if(ar.bFinish) {
-            res.redirect('/articles');
-        }
+        // if(lastArticleCount === ar.total) {
+        //     console.log("总共抓取" + ar.total);
+        //     res.redirect('/articles');
+        // }
     });
    
 }   

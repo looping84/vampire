@@ -47,6 +47,7 @@ var ArticleSchema = new Schema({
     },
     url: {type: String, default: ''},
     author:{type: String, default: ''},
+    author_en: {type: String, default: ''},
     createdAt: {type : Date, default : Date.now},
     //阅读次数
     viewsCount: {type: Number, default: 0}
@@ -60,9 +61,9 @@ ArticleSchema.path('title').validate(function (title) {
     return title.length > 0
 }, 'Article title cannot be blank')
 
-ArticleSchema.path('body').validate(function (body) {
-    return body.length > 0
-}, 'Article body cannot be blank')
+// ArticleSchema.path('body').validate(function (body) {
+//     return body.length > 0
+// }, 'Article body cannot be blank')
 
 /**
  * Pre-remove hook

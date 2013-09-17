@@ -6,7 +6,8 @@ var request = require('request'),
     jqueryUrl = path.resolve(__dirname, "..","..","lib","jquery.js");
 
 var jquery = fs.readFileSync(jqueryUrl, "utf-8");
-var jsdom = require("jsdom");
+var jsdom = require("jsdom"),
+    total = 0;
 
 
 var Grab = {
@@ -21,9 +22,9 @@ var Grab = {
     getPages: function () {
         var arr = [],
             baseUrl = "http://www.cnblogs.com/rubylouvre/default.html?page=";
-        for(var i = 1; i <= 2; i++) {
+        for(var i = 1; i <= 95; i++) {
             this.getArticle(baseUrl + i);
-            console.log(baseUrl +i);
+            // console.log(baseUrl +i);
         }
     },
     getArticle: function(url) {
@@ -52,9 +53,12 @@ var Grab = {
                         viewCounts: /阅读\((\d+)\)/.exec(otherInfo)[1],
                         commentCount: /评论\((\d+)\)/.exec(otherInfo)[1],
                         author: "司徒正美",
+                        author_en: "situzhengmei",
                         url: url,
-                        bFinish: i === len - 1 ? true : false
+                        bFinish: i === len - 1 ? true : false,
+                        total: ++total
                     });
+                    console.log("总共抓取" + total);
                 });
             }
         });
