@@ -24,17 +24,17 @@ var Grab = {
             baseUrl = "http://www.cnblogs.com/rubylouvre/default.html?page=";
         for(var i = 1; i <= 95; i++) {
             this.getArticle(baseUrl + i);
-            // console.log(baseUrl +i);
         }
     },
     getArticle: function(url) {
-        var me = this;
+        var me = this,
+            totalPages = 95;
         jsdom.env({
             url: url,
             src: [jquery],
             done: function (errors, window) {
                 var $ = window.$ ,
-                    len = $(".post").length;
+                    pageCount = $(".post").length;
                 $(".post").each(function (i) {
 
                     var title =  $(this).find("a:first"),
@@ -46,6 +46,7 @@ var Grab = {
 
                     // me.article.title.push(title);
                     // me.article.description.push(description);
+                    ++total;
                     me._opts.callback && me._opts.callback({
                         title: title.text(),
                         description: description.html(),
@@ -55,8 +56,8 @@ var Grab = {
                         author: "司徒正美",
                         author_en: "situzhengmei",
                         url: url,
-                        bFinish: i === len - 1 ? true : false,
-                        total: ++total
+                        bFinish: false,
+                        total: total
                     });
                     console.log("总共抓取" + total);
                 });

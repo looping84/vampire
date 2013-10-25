@@ -8,7 +8,7 @@ var mongoose = require('mongoose')
     , utils = require('../../lib/utils')
     , _ = require('underscore')
     , Grab = require('../util/grab')
-
+    , q = require('q')
 /**
  * Load
  */
@@ -52,10 +52,10 @@ exports.grabSite = function(req, res) {
                 article.save();
             }
         });
-        // if(lastArticleCount === ar.total) {
-        //     console.log("总共抓取" + ar.total);
-        //     res.redirect('/articles');
-        // }
+        if(ar.bFinish) {
+            console.log("总共抓取" + ar.total);
+            res.redirect('/articles');
+        }
     });
    
 }   
